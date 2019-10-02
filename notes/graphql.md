@@ -10,6 +10,65 @@ toc: true
 comments: true
 ---
 
+## Fetching data from Github API with GraphQL
+
+This is the link to the tool to test and build these queries.
+
+* https://developer.github.com/v4/explorer/
+
+
+
+
+
+### Query to view my gists
+
+Query:
+
+```json
+{
+  viewer {
+    gists(first: 10) {
+      nodes {
+        id
+        createdAt
+        description
+      }
+    }
+    login
+  }
+}
+```
+
+Result:
+
+```json
+{
+  "data": {
+    "viewer": {
+      "gists": {
+        "nodes": [
+          {
+            "id": "MDQ6R2lzdGU4NjNiNDI5MmMzOWNlYjY4NThjZTZmNjkzYzI3Mzli",
+            "createdAt": "2018-11-15T08:22:48Z",
+            "description": "My linux setup"
+          },
+          {
+            "id": "MDQ6R2lzdDdjYmVhMTQwMDg0NDU0NGZmMDIyNDUyYThiNmY2NmIx",
+            "createdAt": "2019-01-16T11:55:27Z",
+            "description": "My personal vimium config"
+          }
+        ]
+      },
+      "login": "craftsmandigital"
+    }
+  }
+}
+```
+
+
+
+### Query to fetch my repos 
+
 Query:
 
 ```json
