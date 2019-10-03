@@ -5,14 +5,10 @@ title: "Debian 9 lxde Install and postinstall"
 authors: ["craftsmandigital"]
 tags:
   - Debian
-# slug: debian-lxde-postinstall
+slug: debian-lxde-postinstall
 toc: true
 comments: true
 ---
-
-
-
-# 
 
 ![GitHub release](https://img.shields.io/github/release/hackingjack/debian-lxde-postinstall.svg?style=popout)
 [![Inline docs](http://inch-ci.org/github/{ORG-or-USERNAME}/{REPO-NAME}.svg?branch=master)](http://inch-ci.org/github/{ORG-or-USERNAME}/{REPO-NAME})
