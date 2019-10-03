@@ -31,8 +31,8 @@ The installation process was quite straightforward, After dealing with two issue
 ### Solutions for Issues during the installation
 
 1.  Maybe I got this issue because my computer is somewhat old or something. the solution to the problem was to install the "Non-free Firmware" version of Debian 9. You can download it and create an installation medium on CD or USB from these links:
-    a.  [amd64](https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/amd64/iso-cd/) for a 64 bit PC
-    b.  [I386](https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/i386/iso-cd/) for a 32 bit PC
+    1.  [amd64](https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/amd64/iso-cd/) for a 64 bit PC
+    1.  [I386](https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/i386/iso-cd/) for a 32 bit PC
 1. When you come to the last screen of the installation Instructions, Which heading is \"Finish the install\". Do not go further and follow the instructions on this [link](https://lists.debian.org/debian-user/2017/06/msg00943.html).
 
 ###  The Debian 9 installation process
