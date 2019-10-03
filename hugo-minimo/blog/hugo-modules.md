@@ -5,7 +5,7 @@ title: "Hugo modules"
 authors: ["craftsmandigital"]
 tags:
   - Hugo
-# slug: sejjarch-support
+# slug: hugo-modules
 toc: true
 comments: true
 ---
