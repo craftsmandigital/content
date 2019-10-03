@@ -1,6 +1,6 @@
 ---
-date: 2019-10-02T20:00:00+06:00
-lastmod: 2019-10-02T20:00:00+06:00
+date: 2019-04-02T20:00:00+06:00
+lastmod: 2019-04-02T20:00:00+06:00
 title: "Debian 9 lxde Install and postinstall"
 authors: ["craftsmandigital"]
 tags:
@@ -11,7 +11,7 @@ comments: true
 ---
 
 ![GitHub release](https://img.shields.io/github/release/hackingjack/debian-lxde-postinstall.svg?style=popout)
-[![Inline docs](http://inch-ci.org/github/{ORG-or-USERNAME}/{REPO-NAME}.svg?branch=master)](http://inch-ci.org/github/{ORG-or-USERNAME}/{REPO-NAME})
+
 
 ## The Debian 9 LXDE installation process.
 This document describes :
