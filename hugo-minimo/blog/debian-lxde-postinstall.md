@@ -1,7 +1,7 @@
 ---
-date: 2019-10-03T20:00:00+06:00
-lastmod: 2019-10-03T20:00:00+06:00
-title: "Debian 9 lxde Install and postinstall"
+date: 2019-09-13T20:00:00+06:00
+lastmod: 2019-09-15T20:00:00+06:00
+title: "Debian stuff"
 authors: ["craftsmandigital"]
 tags:
   - Debian
@@ -10,146 +10,149 @@ toc: true
 comments: true
 ---
 
+For the first time I have been able to use the **Hugo modules** feature. Thanks to @chreliot and his [post](https://discourse.gohugo.io/t/how-to-add-a-theme-using-modules-for-beginners/20665), I finally figured out how to use it. I'm not smart enough to figure it out out through the documentation that are available so far.
 
+For other **Hugo modules** noobs that are fighting with **Hugo modules**. This is a step by step guide to help you to get up and running with Hugo modules. 
 
-# 
+## Part 1. Prepare a Hugo site to test out Hugo modules
+### Install latest version of go on your computer
 
-![GitHub release](https://img.shields.io/github/release/hackingjack/debian-lxde-postinstall.svg?style=popout)
-[![Inline docs](http://inch-ci.org/github/{ORG-or-USERNAME}/{REPO-NAME}.svg?branch=master)](http://inch-ci.org/github/{ORG-or-USERNAME}/{REPO-NAME})
+Make sure that you have installed a recent version of **go** on your computer. [Here is the link to the **go** install](https://golang.org/dl/). Follow the instructions carefully. [The `hugo mod` commands](https://gohugo.io/commands/hugo_mod/) do not work without doing this. If you use the `hugo mod` commands, without installing **go**, nothing happens. You don't get an error message as feedback.
 
-## The Debian 9 LXDE installation process.
-This document describes :
--   How to install Debian 9 with lxde desktop environment.
--   How to run my post-installation script [install.sh](./install.sh). The script configures my personal computer ready for use. With all my favourite configurations and applications.
-The installation script is quite personal. But I think other people can use this as it is. I also think it can be a good starting point to fork this Repo and tailor it for your needs.
+### Prepare a test site to implement a theme as a Hugo module
 
-### Issues during the installation
-The installation process was quite straightforward, After dealing with two issues:
-1.  I could not connect to my wireless network during the installation process.
-2.  After the installation was finished, I could not connect to my wireless network.
+The theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** are used as an example (yes that`s exactly the same as @chreliot used in his [post](https://discourse.gohugo.io/t/how-to-add-a-theme-using-modules-for-beginners/20665))
 
-### Solutions for Issues during the installation
-1.  Maybe I got this issue because my computer is somewhat old or something. the solution to the problem was to install the "Non-free Firmware" version of Debian 9. You can download it and create an installation medium on CD or USB from these links:
-    a.  [amd64](https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/amd64/iso-cd/) for a 64 bit PC
-    b.  [I386](https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/i386/iso-cd/) for a 32 bit PC
-2.  When you come to the last screen of the installation Instructions, Which heading is \"Finish the install\". Do not go further and follow the instructions on this [link](https://lists.debian.org/debian-user/2017/06/msg00943.html).
+First you have to prepare a Hugo site to test out the **[hugo-xmin](http://github.com/yihui/hugo-xmin)** theme as a **Hugo module**
 
-###  The Debian 9 installation process
-Just make your own choices on those steps that I don\'t describe. Example just make your own choices for partitioning your discs. For myself I just used the default values on this point.
-1.  Download and prepare an installation medium on USB or DVD. [Checkout solution for installation issue number one](#solutions-for-issues-during-the-installation)
-2.  When you come to the point where you are asked to type in the password for super/root user. Leave these blank and go to next step. When you do it this way, a sudo configuration is created for you automatically. If you need a super/root user, you can configure that later on.
-3.  When you came to the screen where to select software. Leave it as it is, except give a hock for LXDE
-4.  When you came to the screen \"Finish the install\" then read carefully and follow the instructions on [solutions for installation issues number two](#solutions-for-issues-during-the-installation)
+1. Download the example site for the **hugo-xmin** theme:
+You can [download the zip file here](https://github.com/yihui/hugo-xmin/archive/master.zip)
+2. [Extract the folder `exampleSite`](https://github.com/yihui/hugo-xmin/tree/master/exampleSite) to your harddrive
+3. Rename `exampleSite` to `hugo-test-modules`
 
-## The Debian 9 LXDE post install process.
+Later on, you will add the **hugo-xmin** theme as a **Hugo module**.
 
-### Download and prepare for post-installation Script
-Install git on your computer. you have to do this to download the post-installation script from github. Copy and paste this into the terminal, hit enter.
-```sh
-sudo apt update -y
-sudo apt install -y git
+## Part 2. Add a theme as a Hugo module
+
+There are different ways to use **Hugo modules** to add a theme to your Hugo site. This is one of them.
+
+When you test your site in this stadium. You get an error message.
+
+```bash
+hugo serve
 ```
-The commands under vil do the necessary stuff, clone and take you to the right folder to start the post-installation Script. Copy and paste it into the terminal, hit enter.
-```sh
-INST_PATH=$HOME/git_projects/installs && \
-REPO=debian-lxde-postinstall && \
-rm -fR $INST_PATH/$REPO && \
-mkdir -p $INST_PATH && \
-cd $INST_PATH && \
-git clone https://github.com/hackingjack/$REPO.git && \
-cd $REPO
+`Error: module "hugo-xmin" not found; ...`
+
+That's because no theme is added to the Hugo site.
+
+### For now it has only been bureaucracy. The fun part is starting now:
+
+1. Comment out or delete the variable `theme` in [`config.toml` file](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml)
+   ```toml
+   # theme = "hugo-xmin
+   ```
+   We no longer need this variable since we make use of **Hugo modules** (It is possible to use the `theme` variable to mount modules. For simplicity you use the new preferred method).</br></br>
+   
+2. Add this to your [`config.toml` file](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml) to specify a theme as Hugo module:
+   ```toml
+   [module]
+     [[module.imports]]
+       path = "github.com/yihui/hugo-xmin"
+   ```
+   > You don't have to specify the folder to mount to, neither that it is a theme you are mounting. By default **Hugo modules** behave as it is a theme. Hugo mounts github.com/yihui/hugo-xmin in the Hugo theme folder.
+   
+3. Initialize project as **Hugo module**. Go to CLI and type in this command in your Hugo site:
+   ```bash
+   hugo mod init ugly-dummy
+   ```
+   YES IT WAS `ugly-dummy` (It really doesn't mater what the parameter is to the `hugo mod init` command, but there are some restrictions on ".", "/", etc.). I think it's more appropriate to name the module as your Hugo site name. In this case hugo-test-modules. but ugly-dummy is also fine.</br></br>
+   The command could output something like this:</br>
+   `go: creating new go.mod: module ugly-dummy`</br>
+   *information: a new file* `go.mod` *was created*</br ></br>
+4. Test your site:
+   ```bash
+   hugo serve
+   ```
+   Your site should look exactly the same as [this site](https://xmin.yihui.name/)</br>
+   *information: a new file* `go.sum` *was created*</br></br>
+   
+1. Now its time to upload your finished site to **GitHub**. 
+   [Create a **GitHub** Repo](https://github.com/new) and name it `hugo-test-modules`</br>
+   Git commands to upload repo:
+
+   ```bash
+   git init
+   git add -A && git commit -m "Initial Commit"
+   git remote add origin https://github.com/< your username >/hugo-test-modules.git
+   git push -u origin master
+   ```
+   
+1. When you now clone your newly updated repo to your machine, there is no need for `git clone --recursive`. It's just plug and play. Just do a regular `git clone`
+   ```bash
+   git clone https://github.com/< your username >/hugo-test-modules.git
+   ```
+
+
+That was all “happy moduling”
+
+## Part 3. Add content as a Hugo module
+### Adding content as a module, that is what you really, really, really whant
+
+Your site is up and running with a **Hugo module**, the theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** . Now lets add some markdown files to your content. You can mount folders with markdown files from any git repo(It's also possible to mount folders from your hard drive). The repo you mount, don't has to be a Hugo repo. You are going to mount a folder from this [repo](https://github.com/craftsmandigital/markdown-content-repo). Check it out and be familiar with it. The repo contains a folder `testing-hugo-modules`, that could be mounted. The folder contains two files:
+
+* testing-hugo-modules/file-1.md
+* testing-hugo-modules/file-2.md
+
+Here is the configuration that you could drop in your [`config.toml` file](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml). Add it just under the theme stuff, under `[module]` section:
+```toml
+[[module.imports]]
+    path = "github.com/craftsmandigital/markdown-content-repo"
+    disabled = false
+
+    [[module.imports.mounts]]
+    source = "testing-hugo-modules"
+    target = "content/new-stuff"
 ```
+* `path` describe the repo you mount content from
+* `source` describe witch folder(from root) in mounted repo you could append to your Hugo site ([this link brings you inside the actual folder](https://github.com/craftsmandigital/markdown-content-repo/tree/master/testing-hugo-modules))
+* `target` describe witch folder(from root) in your Hugo site the mount could appear (`content/new-stuff`)
 
-### Set your personal settings before post-installation Script
-Edit the file [variables-user.sh](./variables-user.sh) for your personal settings
-```sh
-nano ./variables-user.sh
+After updating [`config.toml` file](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml) there is nothing more to do. It's time to test your site.
+```bash
+hugo serve
 ```
+Now you can see your two new posts at the bottom of the start page (http://localhost:1313/)
 
-### Execute The post-installation Script
-```sh
-./install.sh
-```
+* 2019/09/12 file 1 for testing Hugo modules for content
+* 2019/09/12 file 2 for testing Hugo modules for content
 
-### Manual task to do after finishing the post-installation Script
--   Configuring Google Chrome account
-    -   Personal account
-        -   Press <kbd>Super+g</kbd>. This will bring up Google Chrome
-        -   If you have a password manager download and configure that extension.
-        -   Sync your chrome account
-    -   Job account
-        -   Press <kbd>Super+j</kbd>. This will bring up Google Chrome
-        -   Chrome will ask about sync in first screen. Hit the button and write in gmail/password to job account
--   Configuring visual studio code
-    -   Press <kbd>Super+c</kbd>. This will bring up vscode
-    -   press <kbd>Shift+Alt+d</kbd>. (this vil import your personal vscode settings. Settings sync extension is already installed during the post-installation)
-    -   Type in gist id and secret credential for the sync extension. (This [link](https://docs.google.com/document/d/1myP5xBDmIM5R5VI8Dp3dEyH6iJL3kk8Uu4_NL49SKow/edit) is my personal credentials, you do not have access to them)
--   Setting up printer
-    -   Menu\--\>Preferences\--\>Print settings\--\>Add. Follow the instructions
+Click on one of the posts. Check out the URL address
 
-## Overview over the contents of the post-installation script
-Here is a brief overview of the most program and features that the installation script will install on the computer. For a full overview look inside the shell script [install.sh](./install.sh)
+* http://localhost:1313/new-stuff/file-2/
 
-### Miscellaneous applications.
-The Debian 9 installation with LXDE desktop environments is a quite minimal installation. So there is installed package managers, compiling tools etc. look inside the shell script [install.sh](./install.sh).
+Do you recognize `new-stuff` from your [`config.toml` file](https://github.com/craftsmandigital/hugo-test-modules/blob/master/config.toml). That was your `target` for your mounting point(`content/new-stuff`)
 
-### Desktop applications
--   Google Chrome.
--   Video capture and editing software
-    -   [vokoscreen](https://github.com/vkohaupt/vokoscreen)
-    -   [OpenShot](https://www.openshot.org/)
+### Upload your site to GitHub with two modules added.
 
-### Technical applications
--   [Visual Studio code](https://code.visualstudio.com/)
--   [Hugo](https://gohugo.io/)
--   [pandoc](https://pandoc.org/)
-
-### Keyboard manipulations.
-One of the big reasons that I switched from Windows to Linux. It\'s because you can manipulate everything in the Linux configuration. I have tried to manipulate the keyboard in Windows, with [autohotkey](https://www.autohotkey.com/). But that is not reliable at all. Here is all the changes to the normal us keyboard configuration.
--   <kbd>Space</kbd> works as <kbd>Space</kbd> and <kbd>Ctrl</kbd>. When holding <kbd>Space</kbd> down it works as <kbd>Ctrl</kbd>.
--   Switched <kbd>Caps</kbd> and <kbd>Esc</kbd>. (Hitting <kbd>Esc</kbd> makes <kbd>Caps</kbd>. To make <kbd>Esc</kbd> you have to hit <kbd>Caps</kbd>)
--   <kbd>Caps</kbd> Also works as a third level <kbd>Shift</kbd> when you hold it down.
-
-| Key pressed                       | Norwegian character |
-|-----------------------------------|---------------------|
-| <kbd>Caps+'</kbd>        | æ                   |
-| <kbd>Caps+;</kbd>        | ø                   |
-| <kbd>Caps+\[</kbd>       | å                   |
-| <kbd>Shift+Caps+'</kbd>  | Æ                   |
-| <kbd>Shift+Caps+;</kbd>  | Ø                   |
-| <kbd>Shift+Caps+\[</kbd> | Å                   |
-
-### keyboard shortcuts
-| Keyboard shortcut      | Action taken                                 |
-|------------------------|----------------------------------------------|
-| <kbd>Super+g</kbd> | Start Google Chrome with my personal account |
-| <kbd>Super+j</kbd> | Starts Google Chrome with my job account     |
-| <kbd>Super+c</kbd> | Starts visual studio code                    |
-| <kbd>Super+x</kbd> | Bring up the system log out section          |
-
-For more keyboard shortcuts you can look inside the file [keyboard-shortcuts/my-shortcuts.xml](./keyboard-shortcuts/my-shortcuts.xml)
-
-
-## My experience with different Linux distros
-I have tried out different Linux distros in this order:
-
-### [Ubuntu](https://ubuntu.com/) 16.. With [GNOME](https://www.gnome.org/) desktop
-It was easy to install and quite stable. I liked the desktop environment. Easy to use and smart solutions. The drawback of the gnome desktop, It was quite heavy for my old computer. But at all not as heavy as Windows 10. I can recommend Ubuntu if you have quite a good computer.
-
-### [LUbuntu](https://lubuntu.net/) 18.. With [LXQT](https://lxqt.org/) desktop
-WOOOOW lubuntu turned my computer to a super computer. Lightning-fast. At first glance I really liked this speed and the system has all you need. Easy to configure with no problems. The drawback with lubuntu is that it is unstable. Crashes often. Sometimes thing doesn\'t behave like expected. Maybe I try lubuntu another time and hope for some fixes.
-
-### [Debian](https://www.debian.org/) 9.9 With [LXDE](https://lxde.org/) desktop
-This lxde desktop is quite fast but not as fast as lubuntu. Debian is rock solid. I have used it quite a while by now, and it never crashes. Things behave like expected. Drawbacks with Debian: It is more complicated to install than the other Linux distros I have tried. Debian comes with a quite minimal configuration. You have to do a lot of things yourself with the config (the post-installation scripts takes care of that configuration). Another thing with Debian is that is based on well tested code base. The newest hottest thing is not inside Debian. I think Debian is not the first Linux distro you try out. When you have a little bit of experience then try it out.
-
-## How to test the post-installation script([install.sh](./install.sh))
-In the file [test.sh](./test.sh), the minimum configuration is set up for testing all parts in the [install.sh](./install.sh) script. Just copy chunks of code and paste it inside the test script([test.sh](./test.sh)). The code you will test, execute it like this:
-```sh
-./test.sh
+```bash
+git add -A && git commit -m "Added Hugo module"
+git push -u origin master
 ```
 
+Try to clone your Hugo site:
 
-[![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
-[![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/)
-[![made-with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
-[![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
+```bash
+git clone https://github.com/< your username >/hugo-test-modules.git
+```
+
+Your site could work right out of the box:
+
+```bash
+hugo serve
+```
+
+### You can use Hugo modules to mount any kind of resources to your Hugo site. 
+
+You can mount `layouts` like `partials` `shortcodes` resources like JS libraries. Etc. Use your Imagination.
+
+That was all, really really really “happy moduling”
