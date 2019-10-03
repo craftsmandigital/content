@@ -14,24 +14,31 @@ comments: true
 
 
 ## The Debian 9 LXDE installation process.
+
 This document describes :
+
 -   How to install Debian 9 with lxde desktop environment.
 -   How to run my post-installation script [install.sh](./install.sh). The script configures my personal computer ready for use. With all my favourite configurations and applications.
 The installation script is quite personal. But I think other people can use this as it is. I also think it can be a good starting point to fork this Repo and tailor it for your needs.
 
 ### Issues during the installation
+
 The installation process was quite straightforward, After dealing with two issues:
+
 1.  I could not connect to my wireless network during the installation process.
-2.  After the installation was finished, I could not connect to my wireless network.
+1.  After the installation was finished, I could not connect to my wireless network.
 
 ### Solutions for Issues during the installation
+
 1.  Maybe I got this issue because my computer is somewhat old or something. the solution to the problem was to install the "Non-free Firmware" version of Debian 9. You can download it and create an installation medium on CD or USB from these links:
     a.  [amd64](https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/amd64/iso-cd/) for a 64 bit PC
     b.  [I386](https://cdimage.debian.org/cdimage/unofficial/non-free/images-including-firmware/current/i386/iso-cd/) for a 32 bit PC
-2.  When you come to the last screen of the installation Instructions, Which heading is \"Finish the install\". Do not go further and follow the instructions on this [link](https://lists.debian.org/debian-user/2017/06/msg00943.html).
+1. When you come to the last screen of the installation Instructions, Which heading is \"Finish the install\". Do not go further and follow the instructions on this [link](https://lists.debian.org/debian-user/2017/06/msg00943.html).
 
 ###  The Debian 9 installation process
+
 Just make your own choices on those steps that I don\'t describe. Example just make your own choices for partitioning your discs. For myself I just used the default values on this point.
+
 1.  Download and prepare an installation medium on USB or DVD. [Checkout solution for installation issue number one](#solutions-for-issues-during-the-installation)
 2.  When you come to the point where you are asked to type in the password for super/root user. Leave these blank and go to next step. When you do it this way, a sudo configuration is created for you automatically. If you need a super/root user, you can configure that later on.
 3.  When you came to the screen where to select software. Leave it as it is, except give a hock for LXDE
@@ -40,6 +47,7 @@ Just make your own choices on those steps that I don\'t describe. Example just m
 ## The Debian 9 LXDE post install process.
 
 ### Download and prepare for post-installation Script
+
 Install git on your computer. you have to do this to download the post-installation script from github. Copy and paste this into the terminal, hit enter.
 ```sh
 sudo apt update -y
