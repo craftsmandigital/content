@@ -1,11 +1,11 @@
 ---
-date: 2019-09-13T20:00:00+06:00
-lastmod: 2019-09-15T20:00:00+06:00
-title: "Debian stuff"
+date: 2019-10-03T20:00:00+06:00
+lastmod: 2019-10-03T20:00:00+06:00
+title: "Debian 9 lxde Install and postinstall"
 authors: ["craftsmandigital"]
 tags:
   - Debian
-# slug: debian-lxde-postinstall
+slug: debian-lxde-postinstall
 toc: true
 comments: true
 ---
