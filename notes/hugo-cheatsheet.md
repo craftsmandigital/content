@@ -1,6 +1,6 @@
 ---
 date: 2019-10-03T20:00:00+06:00
-lastmod: 2019-09-15T20:00:00+06:00
+lastmod: 2019-10-03T20:00:00+06:00
 title: "Hugo cheatsheet"
 authors: ["craftsmandigital"]
 tags:
