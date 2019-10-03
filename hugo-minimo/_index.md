@@ -6,9 +6,7 @@ menu:
 weight: -270
 ---
 <img style="float:left" src="/images/bilde3.png" />
-Hello! I’m JonArne. Welcome to my blog. Here are all my posts. Happy reading!
-
-Welcome to my corner of the internet. My blog is the main attraction, mostly a place to document things learned.
+Welcome to my corner of the internet. My [blog](./blog) is the main attraction, mostly a place to document things learned.
 
 {{< center >}}
 {{< text s="1.4" color="red" >}}
