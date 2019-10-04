@@ -19,7 +19,7 @@ This document describes :
 
 -   How to install Debian 9 with lxde desktop environment.
 -   How to run my post-installation script [install.sh](https://github.com/craftsmandigital/debian-lxde-postinstall/blob/master/install.sh). The script configures my personal computer ready for use. With all my favourite configurations and applications.
-The installation script is quite personal. But I think other people can use this as it is. I also think it can be a good starting point to fork this Repo and tailor it for your needs.
+The installation script is quite personal. But I think other people can use this as it is. I also think it can be a good starting point to fork [this Repo](https://github.com/craftsmandigital/debian-lxde-postinstall) and tailor it for your needs.
 
 ### Issues during the installation
 
