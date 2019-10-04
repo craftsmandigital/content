@@ -7,5 +7,5 @@ menu:
     identifier: blog
 weight: -250
 slug: blog
-draft: true
+# draft: true
 ---
