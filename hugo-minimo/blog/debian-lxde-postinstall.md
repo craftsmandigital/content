@@ -18,7 +18,7 @@ comments: true
 This document describes :
 
 -   How to install Debian 9 with lxde desktop environment.
--   How to run my post-installation script [install.sh](./install.sh). The script configures my personal computer ready for use. With all my favourite configurations and applications.
+-   How to run my post-installation script [install.sh](https://github.com/craftsmandigital/debian-lxde-postinstall/blob/master/install.sh). The script configures my personal computer ready for use. With all my favourite configurations and applications.
 The installation script is quite personal. But I think other people can use this as it is. I also think it can be a good starting point to fork this Repo and tailor it for your needs.
 
 ### Issues during the installation
@@ -65,7 +65,7 @@ cd $REPO
 ```
 
 ### Set your personal settings before post-installation Script
-Edit the file [variables-user.sh](./variables-user.sh) for your personal settings
+Edit the file [variables-user.sh](https://github.com/craftsmandigital/debian-lxde-postinstall/blob/master/variables-user.sh) for your personal settings
 ```sh
 nano ./variables-user.sh
 ```
@@ -92,10 +92,10 @@ nano ./variables-user.sh
     -   Menu\--\>Preferences\--\>Print settings\--\>Add. Follow the instructions
 
 ## Overview over the contents of the post-installation script
-Here is a brief overview of the most program and features that the installation script will install on the computer. For a full overview look inside the shell script [install.sh](./install.sh)
+Here is a brief overview of the most program and features that the installation script will install on the computer. For a full overview look inside the shell script [install.sh](https://github.com/craftsmandigital/debian-lxde-postinstall/blob/master/install.sh)
 
 ### Miscellaneous applications.
-The Debian 9 installation with LXDE desktop environments is a quite minimal installation. So there is installed package managers, compiling tools etc. look inside the shell script [install.sh](./install.sh).
+The Debian 9 installation with LXDE desktop environments is a quite minimal installation. So there is installed package managers, compiling tools etc. look inside the shell script [install.sh](https://github.com/craftsmandigital/debian-lxde-postinstall/blob/master/install.sh).
 
 ### Desktop applications
 -   Google Chrome.
@@ -131,7 +131,7 @@ One of the big reasons that I switched from Windows to Linux. It\'s because you 
 | <kbd>Super+c</kbd> | Starts visual studio code                    |
 | <kbd>Super+x</kbd> | Bring up the system log out section          |
 
-For more keyboard shortcuts you can look inside the file [keyboard-shortcuts/my-shortcuts.xml](./keyboard-shortcuts/my-shortcuts.xml)
+For more keyboard shortcuts you can look inside the file [keyboard-shortcuts/my-shortcuts.xml](https://github.com/craftsmandigital/debian-lxde-postinstall/blob/master/keyboard-shortcuts/my-shortcuts.xml)
 
 
 ## My experience with different Linux distros
@@ -146,12 +146,11 @@ WOOOOW lubuntu turned my computer to a super computer. Lightning-fast. At first 
 ### [Debian](https://www.debian.org/) 9.9 With [LXDE](https://lxde.org/) desktop
 This lxde desktop is quite fast but not as fast as lubuntu. Debian is rock solid. I have used it quite a while by now, and it never crashes. Things behave like expected. Drawbacks with Debian: It is more complicated to install than the other Linux distros I have tried. Debian comes with a quite minimal configuration. You have to do a lot of things yourself with the config (the post-installation scripts takes care of that configuration). Another thing with Debian is that is based on well tested code base. The newest hottest thing is not inside Debian. I think Debian is not the first Linux distro you try out. When you have a little bit of experience then try it out.
 
-## How to test the post-installation script([install.sh](./install.sh))
-In the file [test.sh](./test.sh), the minimum configuration is set up for testing all parts in the [install.sh](./install.sh) script. Just copy chunks of code and paste it inside the test script([test.sh](./test.sh)). The code you will test, execute it like this:
+## How to test the post-installation script([install.sh](https://github.com/craftsmandigital/debian-lxde-postinstall/blob/master/install.sh))
+In the file [test.sh](https://github.com/craftsmandigital/debian-lxde-postinstall/blob/master/test.sh), the minimum configuration is set up for testing all parts in the [install.sh](https://github.com/craftsmandigital/debian-lxde-postinstall/blob/master/install.sh) script. Just copy chunks of code and paste it inside the test script([test.sh](https://github.com/craftsmandigital/debian-lxde-postinstall/blob/master/test.sh)). The code you will test, execute it like this:
 ```sh
 ./test.sh
 ```
-
 
 [![Bash Shell](https://badges.frapsoft.com/bash/v1/bash.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![made-with-bash](https://img.shields.io/badge/Made%20with-Bash-1f425f.svg)](https://www.gnu.org/software/bash/)
