@@ -16,5 +16,9 @@ if [ $# -eq 1 ]
 fi
     echo $COMMITMSG
 git add -A && git commit -m "$COMMITMSG"
-
+git push -u origin master
 cd $REPODIR
+
+rm go.*
+hugo mod init xxx
+hugo server --gc --disableFastRender
