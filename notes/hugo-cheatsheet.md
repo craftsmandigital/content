@@ -26,5 +26,9 @@ Here are snippets of Hugo stuff I always forget.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODAyNzYyMTUzLDQ3MjYxNjMxN119
+eyJwcm9wZXJ0aWVzIjoidGl0bGU6IHRlc3QgdGl0bGVcbmF1dG
+hvcjogdGVzdCBhdXRob3JcbnRhZ3M6ICd0ZXN0LGhlc3QscGVz
+dCdcbnN0YXR1czogZHJhZnRcbmRhdGU6ICcyMDE5LTEwLTAzJ1
+xuZXh0ZW5zaW9uczpcbiAgcHJlc2V0OiBnZm1cbiIsImhpc3Rv
+cnkiOlszNTQyNDU2NTQsODAyNzYyMTUzLDQ3MjYxNjMxN119
 -->
