@@ -11,4 +11,6 @@ comments: true
 ---
 this command coppy a md file without front-matter.
 
+```bash
 sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ./content/file.md > ./content/nomater.md
+```
