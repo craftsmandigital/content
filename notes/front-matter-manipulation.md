@@ -24,10 +24,10 @@ we always have to test if our pre generated front matter content is out of date.
 Hugo cant see this variables when we generate a site. If we are going to add a new tag, for example, then we have to manipulate the code all places where tags is present in our code base
 
 #### benefits
-All the variables dissapears after gener
+All the variables dissapears after generating. There are no need to check if variables is outdated.
 
 #### disadvantages
-
+We have to add code to righth places to get Hugo to 
 
 
 
@@ -38,5 +38,5 @@ this command coppy a md file without front-matter.
 sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ./content/file.md > ./content/nomater.md
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMzg5NDc1M119
+eyJoaXN0b3J5IjpbLTcwNzY3MDYwN119
 -->
