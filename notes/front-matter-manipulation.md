@@ -27,7 +27,7 @@ Hugo cant see this variables when we generate a site. If we are going to add a n
 All the variables dissapears after generating. There are no need to check if variables is outdated.
 
 #### disadvantages
-We have to add code to righth places to get Hugo to outputt the right content, And I think this code have to be generated on many different places.
+We have to add code to righth places to get Hugo to outputt the right content, And I think this code have to be generated on many different places. The code wil be different dependent of what you vil do
 
 
 
@@ -38,5 +38,5 @@ this command coppy a md file without front-matter.
 sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ./content/file.md > ./content/nomater.md
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwOTk1MDA4MV19
+eyJoaXN0b3J5IjpbMTUyNjExMzIwNl19
 -->
