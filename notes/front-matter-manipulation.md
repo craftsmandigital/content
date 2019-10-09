@@ -9,12 +9,13 @@ toc: true
 comments: true
 ---
 
-There are two approaches to manipulate front matter variables in Hugo
+## There are two approaches to manipulate front matter variables in Hugo
 
- 1. Programmatic add/update/remove variables in front matter
-	This must be done with a great portion of ingenuity, since it is no way in Hugo to physically manipulate content files before site generation.
- 2. Create dynamically front matter variables during run time.
-	Hugo cant see this variables when we generate a site. If we are going to add a new tag, for example, then we have to manipulate the code all places where tags is present in our code base
+### Programmatic add/update/remove variables in front matter
+This must be done with a great portion of ingenuity, since it is no way in Hugo to physically manipulate content files before site generation.
+
+### Create dynamically front matter variables during run time.
+Hugo cant see this variables when we generate a site. If we are going to add a new tag, for example, then we have to manipulate the code all places where tags is present in our code base
 
 
 
@@ -24,5 +25,5 @@ this command coppy a md file without front-matter.
 sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ./content/file.md > ./content/nomater.md
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg2MzE0OTQxMl19
+eyJoaXN0b3J5IjpbLTY4NzQ3OTUyM119
 -->
