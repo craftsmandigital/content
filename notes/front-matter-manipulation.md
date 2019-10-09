@@ -9,8 +9,15 @@ tags:
 toc: true
 comments: true
 ---
+
+## There are 
+
+
 this command coppy a md file without front-matter.
 
 ```bash
 sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ./content/file.md > ./content/nomater.md
 ```
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbMTIzNTg2MDkyNV19
+-->
