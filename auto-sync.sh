@@ -5,7 +5,6 @@
 CONTENTDIR=$(dirname "$0")
 # echo "CONTENT DIR: $CONTENTDIR"
 
-
 cd $CONTENTDIR
 gstatus=`git status --porcelain`
 
