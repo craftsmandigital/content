@@ -12,6 +12,7 @@ comments: true
 There are two approaches to manipulate front matter variables in Hugo
 
  1. Programaticaly add/update/remove variables in front matter
+ 2. Create dynamicaly front matter variables during runtime
 
 this command coppy a md file without front-matter.
 
@@ -19,5 +20,5 @@ this command coppy a md file without front-matter.
 sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ./content/file.md > ./content/nomater.md
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDg4NTMwNjU4XX0=
+eyJoaXN0b3J5IjpbLTE4Nzc4ODI3NTldfQ==
 -->
