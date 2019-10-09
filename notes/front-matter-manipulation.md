@@ -15,19 +15,19 @@ comments: true
 This must be done with a great portion of ingenuity, since it is no way in Hugo to physically manipulate content files before site generation.
 
 #### benefits
-When front matter is manipulated before generatig of site, there is no modification in the Hugo project since this is already done before generation.
+When front matter is manipulated before generating of site, there is no modification in the Hugo project since this is already done before generation.
 
 #### disadvantages
-we always have to test if our pre generated front matter content is out of date. and modify it or delete it.
+we always have to test if our pre-generated front matter content is out of date. and modify it or delete it.
 
 ### Create dynamically front matter variables during run time.
 Hugo cant see this variables when we generate a site. If we are going to add a new tag, for example, then we have to manipulate the code all places where tags is present in our code base
 
 #### benefits
-All the variables dissapears after generating. There are no need to check if variables is outdated.
+All the variables disappears after generating. There are no need to check if variables is outdated.
 
 #### disadvantages
-We have to add code to righth places to get Hugo to outputt the right content, And I think this code have to be generated on many different places. The code wil be different dependent of what you vil do
+We have to add code to right places to get Hugo to output the right content, And I think this code have to be generated on many different places. The code wil be different dependent of what you w do
 
 
 
@@ -38,5 +38,5 @@ this command coppy a md file without front-matter.
 sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ./content/file.md > ./content/nomater.md
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTUyNjExMzIwNl19
+eyJoaXN0b3J5IjpbMTQ2ODQ1NTEyMF19
 -->
