@@ -13,9 +13,22 @@ comments: true
 
 ### Programmatic add/update/remove variables in front matter
 This must be done with a great portion of ingenuity, since it is no way in Hugo to physically manipulate content files before site generation.
-#### disadvantagests
+
+#### benefits
+ - When frontma
+
+#### disadvantages
+
+
 ### Create dynamically front matter variables during run time.
 Hugo cant see this variables when we generate a site. If we are going to add a new tag, for example, then we have to manipulate the code all places where tags is present in our code base
+
+#### benefits
+
+
+#### disadvantages
+
+
 
 
 
@@ -25,5 +38,5 @@ this command coppy a md file without front-matter.
 sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ./content/file.md > ./content/nomater.md
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM2NzIyNTQ0OF19
+eyJoaXN0b3J5IjpbLTg0Njk1NTI5NV19
 -->
