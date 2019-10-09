@@ -15,7 +15,7 @@ comments: true
 This must be done with a great portion of ingenuity, since it is no way in Hugo to physically manipulate content files before site generation.
 
 #### benefits
- - When frontma
+ - When front matter is manipulated before generatig of site, there is no modification in the Hugo project since this is already done before generat
 
 #### disadvantages
 
@@ -38,5 +38,5 @@ this command coppy a md file without front-matter.
 sed '1 { /^---/ { :a N; /\n---/! ba; d} }' ./content/file.md > ./content/nomater.md
 ```
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg0Njk1NTI5NV19
+eyJoaXN0b3J5IjpbLTY5NTQ5NDY5N119
 -->
