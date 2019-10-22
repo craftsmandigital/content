@@ -9,9 +9,9 @@ tags:
 toc: true
 comments: true
 ---
-[**Hugo modules**](https://gohugo.io/hugo-modules/) has been available in [**Hugo**](https://gohugo.io/) since version 0.56. There is hard to find a step by step tutorial that make it easy to get up and running with **Hugo modules**. I made this tutorial for other noobs, that are fighting with **Hugo modules** and for my self to remember.
+[**Hugo modules**](https://gohugo.io/hugo-modules/) has been available in [**Hugo**](https://gohugo.io/) since version 0.56. There is hard to find a step by step tutorial that make it easy to get up and running with **Hugo modules**. I made this tutorial for me and other noobs, that are fighting with **Hugo modules**.
 
-The tutorial grasps the core functionality of **Hugo modules** with examples that you can follow to get an example **Hugo** site up and running with **Hugo modules**.
+The tutorial grasps the core functionality of **Hugo modules** with examples that you can follow, to get an example **Hugo** site up and running with **Hugo modules**.
 
 prerequisite to this tutorial is knowledge abut **Hugo**, [**Git**](https://git-scm.com/) and [**GitHub**](https://en.wikipedia.org/wiki/GitHub).
 
