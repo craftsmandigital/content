@@ -9,18 +9,21 @@ tags:
 toc: true
 comments: true
 ---
-For the first time I have been able to use the **Hugo modules** feature. Thanks to @chreliot and his [post](https://discourse.gohugo.io/t/how-to-add-a-theme-using-modules-for-beginners/20665), I finally figured out how to use it. I'm not smart enough to figure it out out through the documentation that are available so far.
+[**Hugo modules**](https://gohugo.io/hugo-modules/) has been available in [**Hugo**](https://gohugo.io/) since version 0.56. There is hard to find a step by step tutorial that make it easy to get up and running with **Hugo modules**. I made this tutorial for other noobs, that are fighting with **Hugo modules** and for my self to remember.
 
-For other **Hugo modules** noobs that are fighting with **Hugo modules**. This is a step by step guide to help you to get up and running with Hugo modules. 
+The tutorial grasps the core functionality of **Hugo modules** with examples that you can follow to get an example **Hugo** site up and running with **Hugo modules**.
 
-## Part 1. Prepare a Hugo site to test out Hugo modules
+prerequisite to this tutorial is knowledge abut **Hugo**, [**Git**](https://git-scm.com/) and [**GitHub**](https://en.wikipedia.org/wiki/GitHub).
+
+## Part 1. Prepare a Hugo site to test Hugo modules
+
 ### Install latest version of go on your computer
 
 Make sure that you have installed a recent version of **go** on your computer. [Here is the link to the **go** install](https://golang.org/dl/). Follow the instructions carefully. [The `hugo mod` commands](https://gohugo.io/commands/hugo_mod/) do not work without doing this. If you use the `hugo mod` commands, without installing **go**, nothing happens. You don't get an error message as feedback.
 
 ### Prepare a test site to implement a theme as a Hugo module
 
-The theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** are used as an example (yes that`s exactly the same as @chreliot used in his [post](https://discourse.gohugo.io/t/how-to-add-a-theme-using-modules-for-beginners/20665))
+The theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** are used as an example.
 
 First you have to prepare a Hugo site to test out the **[hugo-xmin](http://github.com/yihui/hugo-xmin)** theme as a **Hugo module**
 
@@ -134,7 +137,7 @@ Do you recognize `new-stuff` from your [`config.toml` file](https://github.com/c
 ### Upload your site to GitHub with two modules added.
 
 ```bash
-git add -A && git commit -m "Added Hugo module"
+git add -A && git commit -m "Added Hugo module for content"
 git push -u origin master
 ```
 
@@ -150,8 +153,31 @@ Your site could work right out of the box:
 hugo serve
 ```
 
+### Updating modules.
+
+When your **Hugo** site is up and running and there has been changes inn the repo's witch your modules are connected to. You have to take action to get these changes in your site. When you do the **hugo mod init** command, it represent a snapshot in time. Its like **git submodules**, you have to take action to update. In our example there can bee changes in:
+
+| Changes    | Repo                                              |
+| ---------- | ------------------------------------------------- |
+| Hugo Theme | github.com/yihui/hugo-xmin                        |
+| Content    | github.com/craftsmandigital/markdown-content-repo |
+
+The quick and dirty way to get the newest version of all your connected modules is to do this:
+
+```bash
+# Do this in your site root folder
+rm go.* # Removes the go.mod and go.sum file
+hugo mod init uglydumy # Init modules to newest version.
+```
+
+In many cases there is not appropriate to download latest version of all modules. For example you don't always want to update to the newest version of your **Hugo** theme. There is also possible to connect to a specific version of the connected module. If you want to do other thing than "quick and dirty" then head over to the [**Hugo** documentation](https://gohugo.io/commands/hugo_mod/).
+
 ### You can use Hugo modules to mount any kind of resources to your Hugo site. 
 
 You can mount `layouts` like `partials` `shortcodes` resources like JS libraries. Etc. Use your Imagination.
 
 That was all, really really really “happy moduling”
+
+If you have some comments or criticism please let me know in the comments below.
+
+An older version of this post is published on the [Hugo community](https://discourse.gohugo.io/t/hugo-modules-for-dummies/20758)
