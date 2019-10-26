@@ -170,7 +170,7 @@ rm go.* # Removes the go.mod and go.sum file
 hugo mod init uglydumy # Init modules to newest version.
 ```
 
-In many cases there is not appropriate to download latest version of all modules. For example you don't always want to update to the newest version of your **Hugo** theme. There is also possible to connect to a specific version of the connected module. If you want to do other thing than "quick and dirty" then head over to the [**Hugo** documentation](https://gohugo.io/commands/hugo_mod/).
+In many cases there is not appropriate to download latest version of all modules. For example you don't always want to update to the newest version of your **Hugo** theme. There is also possible to connect to a specific version of the connected **GitHub** repo. If you want to do other thing than "quick and dirty" then head over to the [**Hugo** documentation](https://gohugo.io/commands/hugo_mod/).
 
 ### You can use Hugo modules to mount any kind of resources to your Hugo site. 
 
