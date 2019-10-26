@@ -9,6 +9,8 @@ toc: true
 comments: true
 ---
 
+
+
 ## There are two approaches to manipulate front matter variables in Hugo
 
 ### Programmatic add/update/remove variables in front matter
