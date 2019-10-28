@@ -5,6 +5,14 @@ title: "Hugo cheatsheet"
 authors: ["craftsmandigital"]
 tags:
   - Hugo
+  - a
+  - b
+  - c
+  - d
+  - e
+  - f
+  - g
+  
 # slug: hugo-cheatsheet
 toc: true
 comments: true
