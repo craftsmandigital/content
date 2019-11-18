@@ -11,3 +11,9 @@ extensions:
 <p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
 </blockquote>
 
+## Thoughts about my own template
+
+- Be careful about namespaces
+
+- there could be call to empty partials inside partials as head.
+All this because ancestor easily can use them to extend functionality
