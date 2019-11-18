@@ -11,9 +11,10 @@ draft: true
   - it should be appropriate input parameters
   - there should be returned values, if it's needed
   - here is an example how the namespace can be structured
-    - 
+    - partials/head.html
+      - partials/pre/head.
 - possibilities to add custom taxonomies like "8 years old" 100 days since
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTU3MjI2MzMsMzExNjM1NzA0LC0xMD
-k0MzI2OTg3LC0yMTI2MTQ5NDQ2LC0yMDYxNDMxOTQ4XX0=
+eyJoaXN0b3J5IjpbNTMxOTI1Mjk3LDMxMTYzNTcwNCwtMTA5ND
+MyNjk4NywtMjEyNjE0OTQ0NiwtMjA2MTQzMTk0OF19
 -->
