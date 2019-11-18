@@ -1,5 +1,5 @@
 ---
-title: My own hugo 
+title: My own Hugo theme
 draft: true
 ---
 
@@ -9,5 +9,5 @@ draft: true
 
 - there could be call to empty partials inside partials as head. All this because ancestor easily can use them to extend functionality.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgyNTA1MDYyM119
+eyJoaXN0b3J5IjpbLTIwNjE0MzE5NDhdfQ==
 -->
