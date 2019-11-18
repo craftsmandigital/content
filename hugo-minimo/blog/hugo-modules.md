@@ -1,6 +1,6 @@
 ---
 date: 2019-09-13T20:00:00+06:00
-lastmod: 2019-10-21T20:00:00+06:00
+lastmod: 2019-10-2109-15T20:00:00+06:00
 title: "Hugo modules"
 authors: ["craftsmandigital"]
 tags:
@@ -9,13 +9,15 @@ tags:
 toc: true
 comments: true
 ---
-[**Hugo modules**](https://gohugo.io/hugo-modules/) has been available in [**Hugo**](https://gohugo.io/) since version 0.56. There is hard to find a step by step tutorial that make it easy to get up and running with **Hugo modules**. I made this tutorial for me and other noobs, that are fighting with **Hugo modules**.
+[**Hugo modules**](https://gohugo.io/hugo-modules/) has been available in [**Hugo**](https://gohugo.io/) since version 0.56. There is hard to find a step by step tutorial that make it easy to get up and running with **Hugo modules**. I made this tutorial for me and otherFor the first time I have been able to use the **Hugo modules** feature. Thanks to @chreliot and his [post](https://discourse.gohugo.io/t/how-to-add-a-theme-using-modules-for-beginners/20665), I finally figured out how to use it. I'm not smart enough to figure it out out through the documentation that are available so far.
 
-The tutorial grasps the core functionality of **Hugo modules** with examples that you can follow, to get an example **Hugo** site up and running with **Hugo modules**.
+For other **Hugo modules** noobs, that are fighting with **Hugo modules**.
 
-prerequisite to this tutorial is knowledge abut **Hugo**, [**Git**](https://git-scm.com/) and [**GitHub**](https://en.wikipedia.org/wiki/GitHub).
+The tutorial grasps the core functionality of **Hugo modules** with examples that you can follow, to get an example **Hugo** site This is a step by step guide to help you to get up and running with **Hugo modules**.
 
-## Part 1. Prepare a Hugo site to test Hugo modules
+prerequisite to this tutorial is knowledge abut **Hugo**, [**Git**](https://git-scm.com/) and [**GitHub**](https://en.wikipedia.org/wiki/GitHub). 
+
+## Part 1. Prepare a Hugo site to test out Hugo modules
 
 ### Install latest version of go on your computer
 
@@ -23,7 +25,7 @@ Make sure that you have installed a recent version of **go** on your computer. [
 
 ### Prepare a test site to implement a theme as a Hugo module
 
-The theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** are used as an example.
+The theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** are used as an example. (yes that`s exactly the same as @chreliot used in his [post](https://discourse.gohugo.io/t/how-to-add-a-theme-using-modules-for-beginners/20665))
 
 First you have to prepare a Hugo site to test out the **[hugo-xmin](http://github.com/yihui/hugo-xmin)** theme as a **Hugo module**
 
@@ -181,3 +183,6 @@ That was all, really really really “happy moduling”
 If you have some comments or criticism please let me know in the comments below.
 
 An older version of this post is published on the [Hugo community](https://discourse.gohugo.io/t/hugo-modules-for-dummies/20758)
+<!--stackedit_data:
+eyJoaXN0b3J5IjpbNzA2MTI4MTI4XX0=
+-->
