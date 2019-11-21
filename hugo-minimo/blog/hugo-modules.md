@@ -25,7 +25,7 @@ Make sure that you have installed a recent version of **go** on your computer. [
 
 ### Prepare a test site to implement a theme as a Hugo module
 
-The theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** are used as an example. (yes that`s exactly the same as @chreliot used in his [post](https://discourse.gohugo.io/t/how-to-add-a-theme-using-modules-for-beginners/20665))
+The theme **[hugo-xmin](http://github.com/yihui/hugo-xmin)** are used as an example.
 
 First you have to prepare a Hugo site to test out the **[hugo-xmin](http://github.com/yihui/hugo-xmin)** theme as a **Hugo module**
 
